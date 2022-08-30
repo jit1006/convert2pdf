@@ -2,11 +2,7 @@ from PIL import Image
 import streamlit as st
 import os
 
-filename = st.file_uploader("Choose a file")
-if filename is not None:
-     dataframe = pd.read_csv(filename)
-     st.write(dataframe)
-     
+filename = st.file_uploader("Choose a file", accept_multiple_files=False , key = None )     
 image = Image.open(filename)
 st.image(image, caption='image file')
 
