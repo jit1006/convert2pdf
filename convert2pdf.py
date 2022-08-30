@@ -1,8 +1,8 @@
 from PIL import Image
+import streamlit as st
 import os
 
-filename = input('image location with extension (like //pic.jpg) : ')
-
+filename = st.file_uploader("Choose a file")
 image = Image.open(filename)
 
 if image.mode == "RGBA":
