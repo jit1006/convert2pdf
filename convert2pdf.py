@@ -12,10 +12,10 @@ if image.mode == "RGBA":
 # output ='output.pdf'
 image = image.save("output.png") 
 
-with open("image.png", "rb") as file:
+with open("output.png", "rb") as file:
      btn = st.download_button(
              label="Download image",
              data=file,
-             file_name="image.png",
+             file_name="output.png",
              mime="image/png"
            )
