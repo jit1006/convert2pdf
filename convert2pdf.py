@@ -10,12 +10,12 @@ if image.mode == "RGBA":
      image = image.convert("RGB")
 
 # output ='output.pdf'
-image = image.save("output.png") 
+image = image.save("output.pdf") 
 
-with open("output.png", "rb") as file:
+with open("output.pdf", "rb") as file:
      btn = st.download_button(
              label="Download image",
              data=file,
-             file_name="output.png",
-             mime="image/png"
+             file_name="output.pdf",
+             mime="image/pdf"
            )
