@@ -2,9 +2,12 @@ from PIL import Image
 import streamlit as st
 import os
 
-filename = st.file_uploader("Choose a file", accept_multiple_files=False , key = None )     
-image = Image.open(filename)
-st.image(image, caption='image file')
+filename = st.file_uploader("Choose a file", accept_multiple_files=False , key = None ) 
+     if filename is not None:
+        image = Image.open(filename)
+    else:
+        image = Image.open("output.png")
+st.image(image, caption='UPLOADED FILE ! ')
 
 if image.mode == "RGBA":
      image = image.convert("RGB")
