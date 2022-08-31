@@ -2,7 +2,10 @@ from PIL import Image
 import streamlit as st
 import os
 
-filename = st.file_uploader("Choose a file", accept_multiple_files=False , key = None ) 
+
+st.title("Image to Pdf file Converter ")
+# filename = st.file_uploader("Choose a file", accept_multiple_files=False , key = None ) 
+filename = st.sidebar.file_uploader("Load your image File Here")
 if filename is not None:
         image = Image.open(filename)
 else:
@@ -17,6 +20,7 @@ if image.mode == "RGBA":
 image = image.save("output.pdf") 
 
 with open("output.pdf", "rb") as file:
+        st.title("Converted File Here -> ")
         btn = st.download_button(
                 label="Download pdf file !",
                 data=file,
