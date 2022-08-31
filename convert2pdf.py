@@ -3,8 +3,7 @@ import streamlit as st
 import os
 
 
-st.title("Image to Pdf file Converter ")
-# filename = st.file_uploader("Choose a file", accept_multiple_files=False , key = None ) 
+st.title("Image to Pdf file Converter ") 
 filename = st.sidebar.file_uploader("Load your image File Here")
 if filename is not None:
         image = Image.open(filename)
